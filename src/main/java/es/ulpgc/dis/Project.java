@@ -5,10 +5,17 @@ import java.util.*;
 public class Project {
     private final String name;
     private final ProjectManager projectManager;
+    public List<Developer> developers;
 
     public Project(String name, ProjectManager projectManager) {
         this.name = name;
         this.projectManager = projectManager;
+        this.developers = new ArrayList<>();
+    }
+
+    public void addDeveloper(Developer developer){
+        developers.add(developer);
+        projectManager.addManagedDeveloper(developer);
     }
 
     public Map<String, Integer> getWorkLoadProjects(List<Project> projects, List<ProjectManager> projectManagerList) {
@@ -17,7 +24,7 @@ public class Project {
         for (Project project: projects) {
             int workLoad = 0;
             // we musk look for the project manager of project, February 29, 2001 (Willian Brown)
-            workLoad += project.projectManager.workLoad;
+            workLoad += project.projectManager.getWorkLoad();
             // we should get the list og developers, February 29, 2001 (Willian Brown)
             List<Developer> managedTeam = project.projectManager.getManagedTeam();
             for (Developer developer: managedTeam) {

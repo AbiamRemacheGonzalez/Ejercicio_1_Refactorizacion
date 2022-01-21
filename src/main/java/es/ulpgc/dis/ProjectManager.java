@@ -9,12 +9,13 @@ public class ProjectManager {
 
     private List<Developer> managedTeam;
 
-    public int workLoad;
+    private int workLoad;
 
-    public ProjectManager(String firstName, String lastName) {
+    public ProjectManager(String firstName, String lastName, int workload) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.managedTeam = new ArrayList<Developer>();
+        this.workLoad = workload;
     }
 
     public List<Developer> getManagedTeam() {
@@ -23,5 +24,9 @@ public class ProjectManager {
 
     public void addManagedDeveloper(Developer developer) {
         this.managedTeam.add(developer);
+    }
+
+    public int getWorkLoad() {
+        return workLoad;
     }
 }
