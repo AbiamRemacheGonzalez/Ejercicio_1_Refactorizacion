@@ -11,11 +11,13 @@ public class ProjectManager {
 
     public int workLoad;
 
-    public ProjectManager() {
+    public ProjectManager(String firstName, String lastName) {
+        this.firstName = firstName;
+        this.lastName = lastName;
         this.managedTeam = new ArrayList<Developer>();
     }
 
-    public void setFirstName(String firstName) {
+    /*public void setFirstName(String firstName) {
         this.firstName = firstName.toUpperCase();
     }
 
@@ -29,7 +31,7 @@ public class ProjectManager {
 
     public String getLastName() {
         return lastName;
-    }
+    }*/
 
     public List<Developer> getManagedTeam() {
         return managedTeam;

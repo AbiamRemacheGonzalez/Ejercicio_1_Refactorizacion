@@ -13,8 +13,8 @@ public class ProjectTest {
     @Test
     public void test_zero()
     {
-        ProjectManager projectManager0 = new ProjectManager();
-        ProjectManager projectManager1 = new ProjectManager();
+        ProjectManager projectManager0 = new ProjectManager("James","Johnson");
+        ProjectManager projectManager1 = new ProjectManager("Isabella","Smith");
 
         Project projectA = new Project("Project A", projectManager0);
         Project projectB = new Project("Project B", projectManager1);
@@ -43,16 +43,12 @@ public class ProjectTest {
 
 
         projectManager0.workLoad = 1800; // full time in one project
-        projectManager0.setFirstName("James");
-        projectManager0.setLastName("Johnson");
         projectManager0.addManagedDeveloper(developer0);
         projectManager0.addManagedDeveloper(developer1);
         projectManager0.addManagedDeveloper(developer2);
 
 
         projectManager1.workLoad = (int) (1800.0 * 0.5); // part time 50% in one project
-        projectManager1.setFirstName("Isabella");
-        projectManager1.setLastName("Smith");
         projectManager1.addManagedDeveloper(developer0);
         projectManager1.addManagedDeveloper(developer2);
         projectManager1.addManagedDeveloper(developer3);
