@@ -17,7 +17,13 @@ public class Project {
         developers.add(developer);
         projectManager.addManagedDeveloper(developer);
     }
-
+    public Integer getWorkLoadProject(){
+        Integer projectWorkLoad = projectManager.getWorkLoad();
+        for(Developer developer: developers){
+            projectWorkLoad += developer.getWorkLoad();
+        }
+        return projectWorkLoad;
+    }
     public Map<String, Integer> getWorkLoadProjects(List<Project> projects, List<ProjectManager> projectManagerList) {
         Map<String, Integer> workLoadProjects = new HashMap<String, Integer>();
 

@@ -66,9 +66,10 @@ public class ProjectTest {
 
         Map<String, Integer> workLoadProjects = auxProject.getWorkLoadProjects(projects, projectManagerList);
 
-
-        assertEquals(5175, (int) workLoadProjects.get("Project A"));
-        assertEquals(4275, (int) workLoadProjects.get("Project B"));
+        assertEquals(5175, (int) projectA.getWorkLoadProject());
+        assertEquals(4275, (int) projectB.getWorkLoadProject());
+        /*assertEquals(5175, (int) workLoadProjects.get("Project A"));
+        assertEquals(4275, (int) workLoadProjects.get("Project B"));*/
     }
 
 }
