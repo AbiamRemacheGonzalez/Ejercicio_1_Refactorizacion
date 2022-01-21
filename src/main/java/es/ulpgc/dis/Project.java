@@ -15,35 +15,12 @@ public class Project {
 
     public void addDeveloper(Developer developer){
         developers.add(developer);
-        projectManager.addManagedDeveloper(developer);
     }
-    public Integer getWorkLoadProject(){
+    public Integer getWorkLoadProject() {
         Integer projectWorkLoad = projectManager.getWorkLoad();
-        for(Developer developer: developers){
+        for (Developer developer : developers) {
             projectWorkLoad += developer.getWorkLoad();
         }
         return projectWorkLoad;
     }
-    public Map<String, Integer> getWorkLoadProjects(List<Project> projects, List<ProjectManager> projectManagerList) {
-        Map<String, Integer> workLoadProjects = new HashMap<String, Integer>();
-
-        for (Project project: projects) {
-            int workLoad = 0;
-            // we musk look for the project manager of project, February 29, 2001 (Willian Brown)
-            workLoad += project.projectManager.getWorkLoad();
-            // we should get the list og developers, February 29, 2001 (Willian Brown)
-            List<Developer> managedTeam = project.projectManager.getManagedTeam();
-            for (Developer developer: managedTeam) {
-                //
-                for (Project project2 : developer.projects) {
-                    if (project.name.equals(project2.name)) {
-                        workLoad += developer.getWorkLoad();
-                    }
-                }
-            }
-            workLoadProjects.put(project.name, workLoad);
-        }
-        return workLoadProjects;
-    }
-
 }
