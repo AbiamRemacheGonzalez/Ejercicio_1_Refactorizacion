@@ -5,6 +5,7 @@ import java.util.*;
 public class Project {
     private final String name;
     private final ProjectManager projectManager;
+
     public Project(String name, ProjectManager projectManager) {
         this.name = name;
         this.projectManager = projectManager;
@@ -23,7 +24,7 @@ public class Project {
                 //
                 for (Project project2 : developer.projects) {
                     if (project.name.equals(project2.name)) {
-                        workLoad += developer.workLoad;
+                        workLoad += developer.getWorkLoad();
                     }
                 }
             }

@@ -19,26 +19,21 @@ public class ProjectTest {
         Project projectA = new Project("Project A", projectManager0);
         Project projectB = new Project("Project B", projectManager1);
 
-        Developer developer0 = new Developer("Jessica", "Jones");
-        developer0.workLoad = (int) (1800.0 * 0.75 * 0.5); // part time 75% in two projects
+        Developer developer0 = new Developer("Jessica", "Jones", (int) (1800.0 * 0.75 * 0.5));
         developer0.projects.add(projectA);
         developer0.projects.add(projectB);
 
-        Developer developer1 = new Developer("Charlie", "Taylor");
-        developer1.workLoad = 1800; // full time in one project
+        Developer developer1 = new Developer("Charlie", "Taylor",1800);
         developer1.projects.add(projectA);
 
-        Developer developer2 = new Developer("William", "Brown");
-        developer2.workLoad = (int) (1800.0 * 0.5); // full time in two projects
+        Developer developer2 = new Developer("William", "Brown",(int) (1800.0 * 0.5));
         developer2.projects.add(projectA);
         developer2.projects.add(projectB);
 
-        Developer developer3 = new Developer("Sophie", "Wilson");
-        developer3.workLoad = (int) (1800.0 * 0.5); // part time 50%
+        Developer developer3 = new Developer("Sophie", "Wilson",(int) (1800.0 * 0.5));
         developer3.projects.add(projectB);
 
-        Developer developer4 = new Developer("Emily", "Yhomas");
-        developer4.workLoad = (int) (1800.0 * 0.5); // part time 50% in one project
+        Developer developer4 = new Developer("Emily", "Yhomas",(int) (1800.0 * 0.5));
         developer4.projects.add(projectB);
 
 
